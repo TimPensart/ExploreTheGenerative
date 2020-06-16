@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="p5.js"></script>
+    <script src="p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style-systems.css">
+    <script src="https://cdn.jsdelivr.net/npm/webmidi@2.5.1"></script>
+    <meta charset="utf-8">
+
+</head>
+
+<body>
+    <div class="left-wrapper">
+        <div class="piano">
+            <div class="header">
+                Piano visualizer
+                <div class="help-text">If you don't have a midi piano, You can also use your keyboard. View the hints in the piano below to find the keys to press.</div>
+                <div class="help-icon" onclick="showText()"></div>
+            </div>
+
+            <div class="note-visual">
+            </div>
+
+            <div class="keys">
+                <div data-key="81" data-midi="48" class="key" data-note="C">
+                    <span class="hints">Q</span>
+                </div>
+                <div data-key="90" data-midi="49" class="key sharp" data-note="C#">
+                    <span class="hints">Z</span>
+                </div>
+                <div data-key="83" data-midi="50" class="key" data-note="D">
+                    <span class="hints">S</span>
+                </div>
+                <div data-key="69" data-midi="51" class="key sharp" data-note="D#">
+                    <span class="hints">E</span>
+                </div>
+                <div data-key="68" data-midi="52" class="key" data-note="E">
+                    <span class="hints">D</span>
+                </div>
+                <div data-key="70" data-midi="53" class="key" data-note="F">
+                    <span class="hints">F</span>
+                </div>
+                <div data-key="84" data-midi="54" class="key sharp" data-note="F#">
+                    <span class="hints">T</span>
+                </div>
+                <div data-key="71" data-midi="55" class="key" data-note="G">
+                    <span class="hints">G</span>
+                </div>
+                <div data-key="89" data-midi="56" class="key sharp" data-note="G#">
+                    <span class="hints">Y</span>
+                </div>
+                <div data-key="72" data-midi="57" class="key" data-note="A">
+                    <span class="hints">H</span>
+                </div>
+                <div data-key="85" data-midi="58" class="key sharp" data-note="A#">
+                    <span class="hints">U</span>
+                </div>
+                <div data-key="74" data-midi="59" class="key" data-note="B">
+                    <span class="hints">J</span>
+                </div>
+                <div data-key="75" data-midi="60" class="key" data-note="C">
+                    <span class="hints">K</span>
+                </div>
+                <div data-key="79" data-midi="61" class="key sharp" data-note="C#">
+                    <span class="hints">O</span>
+                </div>
+                <div data-key="76" data-midi="62" class="key" data-note="D">
+                    <span class="hints">L</span>
+                </div>
+                <div data-key="80" data-midi="63" class="key sharp" data-note="D#">
+                    <span class="hints">P</span>
+                </div>
+                <div data-key="77" data-midi="64" class="key" data-note="E">
+                    <span class="hints">M</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="controls">
+            <div class="header">
+                Controls
+            </div>
+            <div class="sliders">
+                <div class="slidecontainer">
+                    <img src="img/circle-size.svg" class="slider-icon" alt="">
+                    <input type="range" min="1" max="100" class="slider" id="slider1">
+                </div>
+                <div class="slidecontainer">
+                    <img src="img/noise-icon.svg" class="slider-icon" alt="">
+                    <input type="range" min="1" max="100" class="slider" id="slider2">
+                </div>
+                <div class="slidecontainer">
+                    <img src="img/speed.svg" class="slider-icon" alt="">
+                    <input type="range" min="1" max="100" class="slider" id="slider4">
+                </div>
+            </div>
+            <div class="switches">
+                <div class="switch-group">
+                    <div class="switch left active" onclick="toggleSwitch(this)">
+                        <div class="dark switch-icon" alt=""></div>
+                    </div>
+                    <div class="switch right" onclick="toggleSwitch(this)">
+                        <div class="light switch-icon" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="options">
+        <div>
+            <img src="img/save_alt-24px.svg" class="download icon" onclick="downloadCanvas()">
+            <img src="img/print-24px%20(1).svg" class="print icon" onclick="print_canvas()">
+            <img src="img/autorenew-24px.svg" class="new icon" onclick="renewCanvas()">
+        </div>
+    </div>
+
+    <div class="activate" onclick="start(this)">
+        Click to start
+    </div>
+
+    <audio data-key="81" data-midi="48" src="sounds/piano1.wav"></audio>
+    <audio data-key="90" data-midi="49" src="sounds/piano2.wav"></audio>
+    <audio data-key="83" data-midi="50" src="sounds/piano3.wav"></audio>
+    <audio data-key="69" data-midi="51" src="sounds/piano4.wav"></audio>
+    <audio data-key="68" data-midi="52" src="sounds/piano5.wav"></audio>
+    <audio data-key="70" data-midi="53" src="sounds/piano6.wav"></audio>
+    <audio data-key="84" data-midi="54" src="sounds/piano7.wav"></audio>
+    <audio data-key="71" data-midi="55" src="sounds/piano8.wav"></audio>
+    <audio data-key="89" data-midi="56" src="sounds/piano9.wav"></audio>
+    <audio data-key="72" data-midi="57" src="sounds/piano10.wav"></audio>
+    <audio data-key="85" data-midi="58" src="sounds/piano11.wav"></audio>
+    <audio data-key="74" data-midi="59" src="sounds/piano12.wav"></audio>
+    <audio data-key="75" data-midi="60" src="sounds/piano13.wav"></audio>
+    <audio data-key="79" data-midi="61" src="sounds/piano14.wav"></audio>
+    <audio data-key="76" data-midi="62" src="sounds/piano15.wav"></audio>
+    <audio data-key="80" data-midi="63" src="sounds/piano16.wav"></audio>
+    <audio data-key="77" data-midi="64" src="sounds/piano17.wav"></audio>
+
+
+    <div id="canvas" class="canvas"></div>
+
+
+    <script src="abstract-sketch.js"></script>
+</body>
+
+</html>

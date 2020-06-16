@@ -1,0 +1,147 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+html {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #e8e8e8;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    max-width: 1250px;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.header {
+    margin: 10px;
+}
+
+.styles {
+    width: 80%;
+}
+
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.style {
+    position: relative;
+    width: 180px;
+    height: 300px;
+    line-height: 300px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+    background-color: black;
+    margin: 10px;
+    -webkit-transition: all ease .1s;
+    transition: all ease .1s;
+}
+
+.style:hover {
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.plasma {
+    background: -webkit-gradient(linear,
+        left top, left bottom,
+        from(rgba(0, 0, 0, 0.3)),
+        to(rgba(0, 0, 0, 0.3))), url(img/plasma.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)), url(img/plasma.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.light {
+    background: -webkit-gradient(linear,
+        left top, left bottom,
+        from(rgba(0, 0, 0, 0.3)),
+        to(rgba(0, 0, 0, 0.3))), url(img/light.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)), url(img/light.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.lines {
+    background: -webkit-gradient(linear,
+        left top, left bottom,
+        from(rgba(0, 0, 0, 0.3)),
+        to(rgba(0, 0, 0, 0.3))), url(img/lines.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)), url(img/lines.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.abstract {
+    background: -webkit-gradient(linear,
+        left top, left bottom,
+        from(rgba(0, 0, 0, 0.3)),
+        to(rgba(0, 0, 0, 0.3))), url(img/abstract.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)), url(img/abstract.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.streak {
+    background: -webkit-gradient(linear,
+        left top, left bottom,
+        from(rgba(0, 0, 0, 0.3)),
+        to(rgba(0, 0, 0, 0.3))), url(img/streak.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)), url(img/streak.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.emerge {
+    background: -webkit-gradient(linear,
+        left top, left bottom,
+        from(rgba(0, 0, 0, 0.3)),
+        to(rgba(0, 0, 0, 0.3))), url(img/emerge.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)), url(img/emerge.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
